@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dambar Shah</title>
+    <link rel="stylesheet" href="assets/includes/style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pc: #7C2985;
+        }
+
+        .desktop {
+            display: inline;
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        .c-pr {
+            color: #7C2985;
+        }
+
+        .b-pr {
+            background: #7C2985;
+        }
+
+        * {
+            background-attachment: scroll;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        @media screen and (max-width:500px) {
+            .desktop {
+                display: none;
+            }
+
+            .mobile {
+                display: inline;
+            }
+        }
+
+        .menu_bar {
+            box-shadow: 0 0 5px var(--pc);
+            padding-bottom: 10px;
+        }
+
+        .menu_icon {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            color: var(--pc);
+            box-shadow: 0 0px 5px grey;
+            z-index: 100;
+        }
+
+        .menu_icon:hover {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            box-shadow: 0 0px 5px grey;
+            text-align: center;
+            font-size: 32px;
+            color: grey;
+            cursor: pointer;
+        }
+
+        .nav_body {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            width: 260px;
+            z-index: 200;
+            background: var(--pc);
+            overflow-y: scroll;
+            padding: 15px 10px 0px 10px;
+            display: none;
+        }
+
+        .nav_body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .menu {
+            background: transparent;
+            padding: 4px 15px 5px 15px;
+            font-size: 18px;
+            color: white;
+        }
+
+        .menu:hover {
+            background: rgba(245, 245, 245, 0.1);
+            color: white;
+            cursor: pointer;
+        }
+
+        .nav_cancel {
+            color: white;
+            font-size: 24px;
+            transform: scale(1, 1);
+        }
+
+        .nav_cancel:hover {
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transform: scale(1.05, 1.05);
+        }
+
+        .footer {
+            box-shadow: inset 0 0 4px var(--pc);
+
+        }
+
+        .links {
+            font-size: 14px;
+            color: var(--pc);
+            padding: 2px;
+        }
+
+        .links:hover {
+            font-size: 14px;
+            color: grey;
+            cursor: pointer;
+            padding: 2px;
+        }
+
+        .social {
+            width: 45px;
+            height: 45px;
+            display: inline-block;
+            margin: 2px;
+            border: 1px solid var(--pc);
+            text-align: center;
+            font-size: 28px;
+            color: var(--pc);
+        }
+
+        .social:hover {
+            width: 45px;
+            height: 45px;
+            display: inline-block;
+            margin: 2px;
+            border: 1px solid var(--pc);
+            text-align: center;
+            font-size: 28px;
+            background: var(--pc);
+            color: white;
+            cursor: pointer;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Muli:900');
+
+        .web_name {
+            color: white;
+            text-shadow: 0 0 0.05em rgba(0, 0, 0, 0.2),
+                -0.025em 0.025em 0.1em var(--pc),
+                -0.05em 0.05em 0.1em var(--pc),
+                -0.1em 0.1em 0.3em var(--pc),
+                -0.1em 0.1em 0.5em rgba(0, 0, 0, 0.5);
+            font-family: 'Muli', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 24px 0px 0px 5px;
+        }
+
+        .web_name:hover {
+            cursor: pointer;
+            color: rgba(245, 245, 245, 0.9);
+        }
+
+        .my-btn {
+            color: var(--pc);
+            border: 1px solid var(--pc);
+            background: white;
+            padding: 10px 15px 10px 15px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .my-btn:hover {
+            color: white;
+            background: var(--pc);
+            padding: 10px 15px 10px 15px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: white;
+            color: var(--pc);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: var(--pc);
+            border: 1px solid white;
+            color: white;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".menu_icon").click(function () {
+                $(".nav_body").css("display", "block");
+
+                $(document).keyup(function (e) {
+                    if (e.keyCode === 27) $('.nav_cancel').click();
+                });
+
+            });
+            $(".nav_cancel").click(function () {
+                $(".nav_body").css("display", "none");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Header Section Starts here-->
+    <!-- Header Section Starts here-->
+    <!-- Header Section Starts here-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 menu_bar">
+                <h1 class="web_name" style="font-family: 'Muli', sans-serif;"
+                    onclick="window.location.href='index.php'">Dambar Shah</h1>
+                <!-- Main menu icon -->
+                <div class="menu_icon"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar main menu body -->
+    <div class="nav_body">
+        <i class="far fa-times-circle nav_cancel"></i>
+        <div class="text-center">
+            <img src="assets/images/bb.jpg" style="width:100px;" alt="">
+        </div>
+        <h2 class="text-light text-center" onclick="window.location.href='index.php'" style="cursor: pointer;">Dambar
+            Shah</h2>
+        <br><br>
+        <div class="menu" onclick="window.location.href='index.html'"><i class="fas fa-th-large"></i> Home</div>
+        <div class="menu" onclick="window.location.href='index.html?#Services'"><i class="fab fa-usps"></i> Services
+        </div>
+        <div class="menu" onclick="window.location.href='index.html?#Resume'"><i class="fas fa-file"></i> Resume</div>
+        <div class="menu" onclick="window.location.href='index.html?#Hire'"><i class="fab fa-hire-a-helper"></i> Hire Me
+        </div>
+        <div class="menu" onclick="window.location.href='index.html?#About'"><i class="fas fa-info-circle"></i> About Me
+        </div>
+        <div class="menu" onclick="window.location.href='index.html?#Contact'"><i class="fas fa-id-card-alt"></i>
+            Contact Me</div>
+    </div>
+
+    <!-- Header section ends here -->
+    <!-- Header section ends here -->
+    <!-- Header section ends here -->
+
+
+    <!-- About Section -->
+    <!-- About Section -->
+    <!-- About Section -->
+    <div class="container mt-5 mb-5 p-5"
+        style="box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8);">
+        <div class="row">
+            <div class="col-md-6 c-pr">
+                <div style="width:100%; float:left">
+                    <img src="assets/images/bb.jpg" alt="" style="width: 100px;">
+                    <br> <br>
+                    <table>
+                        <tr>
+                            <th>Name: </th>
+                            <td>Dambar Shah</td>
+                        </tr>
+                        <tr>
+                            <th>Profile: </th>
+                            <td>Web Designer</td>
+                        </tr>
+                        <tr>
+                            <th>Email: </th>
+                            <td>dambar981040@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <th>Phone: </th>
+                            <td>+9779810409095</td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="width: 100%; float:left">
+                    <br>
+                    <br>
+                    <h2>Skill</h2>
+                    <span>HTML</span> <span class="pull-right">85%</span>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <br>
+                    <span>CSS3</span> <span class="pull-right">75%</span>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <br>
+                    <span>PHP</span> <span class="pull-right">50%</span>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <br>
+                    <span>JAVASCRIPT</span> <span class="pull-right">90%</span>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 pl-5">
+                <h3 class="c-pr" id="About">About Me</h3>
+                <hr style="width:100px; border:1px solid var(--pc)" class="float-left c-pr">
+                <br>
+                <br>
+                <p style="font-size: 14px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate veritatis
+                    laboriosam necessitatibus iusto repellendus facilis aperiam molestiae blanditiis ipsa nulla culpa
+                    sit odio, repudiandae saepe suscipit sint asperiores fugiat assumenda?</p>
+                <p style="font-size: 14px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate veritatis
+                    laboriosam necessitatibus iusto repellendus facilis aperiam molestiae blanditiis ipsa nulla culpa
+                    sit odio, repudiandae saepe suscipit sint asperiores fugiat assumenda?</p>
+                <p style="font-size: 14px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate veritatis
+                    laboriosam necessitatibus iusto repellendus facilis aperiam molestiae blanditiis ipsa nulla culpa
+                    sit odio, repudiandae saepe suscipit sint asperiores fugiat assumenda?</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Service section -->
+    <!-- Service section -->
+    <!-- Service section -->
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <br>
+                <h1 class="c-pr" id="Services">SERVICES</h1>
+                <hr style="width:100px; border:1px solid var(--pc)" class="c-pr">
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-box">
+                    <div class="service-ico">
+                        <span class="ico-circle"><i class="fas fa-briefcase-medical"></i></span>
+                    </div>
+                    <div class="service-content">
+                        <h2 class="s-title">Web Design</h2>
+                        <p class="s-description text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat!
+                            Quia,
+                            provident vitae! Magni
+                            tempora perferendis eum non provident.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-box">
+                    <div class="service-ico">
+                        <span class="ico-circle"><i class="far fa-list-alt"></i></span>
+                    </div>
+                    <div class="service-content">
+                        <h2 class="s-title">Web Development</h2>
+                        <p class="s-description text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat!
+                            Quia,
+                            provident vitae! Magni
+                            tempora perferendis eum non provident.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-box">
+                    <div class="service-ico">
+                        <span class="ico-circle"><i class="fas fa-camera-retro"></i></span>
+                    </div>
+                    <div class="service-content">
+                        <h2 class="s-title">Photography</h2>
+                        <p class="s-description text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat!
+                            Quia,
+                            provident vitae! Magni
+                            tempora perferendis eum non provident.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="service-box">
+                    <div class="service-ico">
+                        <span class="ico-circle"><i class="fas fa-microscope"></i></span>
+                    </div>
+                    <div class="service-content">
+                        <h2 class="s-title">Responsive Design</h2>
+                        <p class="s-description text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat!
+                            Quia,
+                            provident vitae! Magni
+                            tempora perferendis eum non provident.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-box">
+                    <div class="service-ico">
+                        <span class="ico-circle"><i class="fas fa-sun"></i></span>
+                    </div>
+                    <div class="service-content">
+                        <h2 class="s-title">Graphics Design</h2>
+                        <p class="s-description text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat!
+                            Quia,
+                            provident vitae! Magni
+                            tempora perferendis eum non provident.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-box">
+                    <div class="service-ico">
+                        <span class="ico-circle"><i class="fas fa-calendar-week"></i></span>
+                    </div>
+                    <div class="service-content">
+                        <h2 class="s-title">Marketing Services</h2>
+                        <p class="s-description text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat!
+                            Quia,
+                            provident vitae! Magni
+                            tempora perferendis eum non provident.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- Resume view -->
+    <!-- Resume view -->
+    <!-- Resume view -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-5 p-5 b-pr text-light" id="Resume">
+                <h3>Want to hire me ? Please do check my resume to analyse my skills and experience if it suits for your
+                    company or organization</h3>
+                <br>
+                <a href="">
+                    <button class="btn c-pr">View My Resume</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- hire me -->
+    <!-- hire me -->
+    <!-- hire me -->
+
+    <div class="container mb-5">
+        <div class="row" style="box-shadow: 0px 0px 5px var(--pc);">
+            <div class="col-md-12 p-5">
+                <h3 class="c-pr" id="Hire">Want to hire me ? </h3>
+                <h4>If you think I am suitale for your project individually, please leave a mail for discuss <a
+                        href="mailto: dambar09140@gmail.com">here</a></h4>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Me -->
+    <!-- Contact Me -->
+    <!-- Contact Me -->
+    <div class="container" id="Contact">
+        <div class="row" style="box-shadow: 0px 0px 5px var(--pc);">
+            <div class="col-md-6 p-5 b-pr text-light">
+                <h3>Send Message</h3>
+                <hr style="width:100px; border:1px solid white" class="c-pr float-left">
+
+                <br><br>
+
+                <div class="container">
+                    <form action="/action_page.php">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                        <label for="country">Country</label>
+                        <input type="text" id="country" name="country" placeholder="Your country name">
+
+
+                        <label for="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.."
+                            style="height:200px"></textarea>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 p-5">
+                <h3>Get in touch</h3>
+                <hr style="width:100px; border:1px solid var(--pc)" class="c-pr float-left">
+                <br><br>
+
+                <p style="font-size:15px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, ab
+                    architecto perferendis laudantium molestiae quisquam qui optio illo! Ratione possimus quas maxime
+                    provident, praesentium totam natus debitis commodi consequuntur quaerat.</p>
+
+                <h3 class="c-pr">Social Presence</h3>
+                <hr class="b-pr col-3 float-left" style="border: 2px solid var(--pc)"> <br> <br>
+                <h5 class="c-pr">Chat with us on:</h5>
+                <div class="social" onclick="window.location.href='https://facebook.com/profistgroups'"><i
+                        class="fab fa-facebook-f"></i></div>
+                <div class="social" onclick="window.location.href='https://api.whatsapp.com/send?phone=9779810409095'">
+                    <i class="fab fa-whatsapp"></i></div>
+                <div class="social" onclick="window.location.href='mailto: dambar981040@gmail.com'"><i
+                        class="far fa-envelope"></i></div>
+                <div class="social" onclick="window.location.href='https://www.linkedin.com/in/dambar-sah-907164171'"><i
+                        class="fab fa-linkedin-in"></i></div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer Sectio starts here -->
+    <!-- Footer Sectio starts here -->
+    <!-- Footer Sectio starts here -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                All Rights Reserved <br>
+                Designed By <a href="https://facebook.com/bikash981040">Dambar Sah</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Sectio Ends here -->
+    <!-- Footer Sectio Ends here -->
+    <!-- Footer Sectio Ends here -->
+
+</body>
+
+</html>
